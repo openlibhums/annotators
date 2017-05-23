@@ -1,29 +1,18 @@
 # README #
 
-This README would normally document whatever steps are necessary to get your application up and running.
+Annotators is a plugin for Janeyway, the journal management system.
 
 ### What is this repository for? ###
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+* Allows embedding of Annotran and Hypothesis in Janeway articles.
+* 1.0
 
 ### How do I get set up? ###
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
-
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
+* Clone into plugins folder
+* Run install_plugins command
 
 ### Who do I talk to? ###
 
-* Repo owner or admin
-* Other community or team contact
+* Andy Byers - tech@openlibhums.org
+* Martin Eve - martin.eve@openlibhums.org

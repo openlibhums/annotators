@@ -1,0 +1,32 @@
+{% extends "admin/core/base.html" %}
+
+{% block title %}Annotators{% endblock %}
+{% block title-section %}Annotators{% endblock %}
+
+{% block body %}
+    <form method="POST">
+    {% csrf_token %}
+
+    <div class="large-12 columns">
+        <div class="box">
+            <div class="title-area">
+                <h2>Annotran</h2>
+            </div>
+            <div class="content">
+                <p>This option allows you to enable annotation based tranlsation tool <a href="https://annotran.openlibhums.org/">Annotran</a></p>
+                <input name="annotran" id="annotran" type="checkbox" {% if enable_annotran.value == 'on' %}checked="checked"{% endif %}>
+                <label for="annotran">Enable Annotran</label>
+            </div>
+            <div class="title-area">
+                <h2>Hypothesis</h2>
+            </div>
+            <div class="content">
+                <p>This option allows you to enable annotation  tool <a href="https://hypothes.is/">Hypothesis</a></p>
+                <input name="hypothesis" id="hypothesis" type="checkbox" {% if enable_hypothesis.value == 'on' %}checked="checked"{% endif %}>
+                <label for="hypothesis">Enable Hypothesis</label>
+            </div>
+            <button type="submit" class="success button">Update Settings</button>
+        </div>
+    </div>
+    </form>
+{% endblock %}
