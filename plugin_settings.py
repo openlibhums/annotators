@@ -1,6 +1,5 @@
 from utils import models, setting_handler
 
-
 PLUGIN_NAME = 'Annotators'
 DESCRIPTION = 'This is a plugin to handle consortial billing.'
 AUTHOR = 'Andy Byers'
@@ -32,8 +31,8 @@ def install():
 
 def hook_registry():
     # On site load, the load function is run for each installed plugin to generate
-	# a list of hooks.
+    # a list of hooks.
     return {
         'article_js_block': {'module': 'plugins.annotators.hooks', 'function': 'embed_hook'},
         'article_buttons': {'module': 'plugins.annotators.hooks', 'function': 'annotran_button'}
-        }
+    }
