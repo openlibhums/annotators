@@ -14,5 +14,5 @@ Annotators is a plugin for Janeyway, the journal management system.
 
 ### Who do I talk to? ###
 
-* Andy Byers - tech@openlibhums.org
+* Andy Byers - a.byers@bbk.ac.uk
 * Martin Eve - martin.eve@openlibhums.org
