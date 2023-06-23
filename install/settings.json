@@ -1,0 +1,17 @@
+[
+  {
+    "group": {
+      "name": "plugin:annotators"
+    },
+    "setting": {
+      "description": "Enables hypothesis integration on the article page.",
+      "is_translatable": false,
+      "name": "enable_hypothesis",
+      "pretty_name": "Enable Hypothesis (PLUGIN)",
+      "type": "boolean"
+    },
+    "value": {
+      "default": ""
+    }
+  }
+]
