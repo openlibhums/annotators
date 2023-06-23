@@ -1,4 +1,5 @@
-from utils import models, setting_handler
+from utils import models, plugins
+from utils.install import update_settings
 
 PLUGIN_NAME = 'Annotators'
 DESCRIPTION = 'This is a plugin to handle consortial billing.'
@@ -7,26 +8,34 @@ VERSION = '1.0'
 SHORT_NAME = 'annotators'
 DISPLAY_NAME = 'Annotators'
 MANAGER_URL = 'annotators_index'
+JANEWAY_VERSION = "1.5.0"
+IS_WORKFLOW_PLUGIN = False
 
 
-def get_self():
-    new_plugin, created = models.Plugin.objects.get_or_create(name=SHORT_NAME,
-                                                              display_name=DISPLAY_NAME,
-                                                              version=VERSION,
-                                                              enabled=True)
-    return new_plugin
+class AnnotatorsPlugin(plugins.Plugin):
+    plugin_name = PLUGIN_NAME
+    display_name = DISPLAY_NAME
+    description = DESCRIPTION
+    author = AUTHOR
+    short_name = SHORT_NAME
+
+    manager_url = MANAGER_URL
+
+    version = VERSION
+    janeway_version = JANEWAY_VERSION
+
+    is_workflow_plugin = IS_WORKFLOW_PLUGIN
 
 
 def install():
-    new_plugin, created = models.Plugin.objects.get_or_create(name=SHORT_NAME,
-                                                              display_name=DISPLAY_NAME,
-                                                              version=VERSION,
-                                                              enabled=True)
+    AnnotatorsPlugin.install()
+    update_settings(
+        file_path='plugins/annotators/install/settings.json'
+    )
 
-    if created:
-        print('Plugin {0} installed.'.format(PLUGIN_NAME))
-    else:
-        print('Plugin {0} is already installed.'.format(PLUGIN_NAME))
+
+def register_for_events():
+    pass
 
 
 def hook_registry():
@@ -34,5 +43,4 @@ def hook_registry():
     # a list of hooks.
     return {
         'article_js_block': {'module': 'plugins.annotators.hooks', 'function': 'embed_hook'},
-        'article_buttons': {'module': 'plugins.annotators.hooks', 'function': 'annotran_button'}
     }
