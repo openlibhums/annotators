@@ -8,15 +8,19 @@ from utils import setting_handler
 def index(request):
     plugin = plugin_settings.AnnotatorsPlugin.get_self()
 
-    setting_group_name = 'plugin:annotators'
-    enable_hypothesis = setting_handler.get_setting(
-        setting_group_name=setting_group_name,
+    enable_hypothesis = setting_handler.get_plugin_setting(
+        plugin=plugin,
         setting_name='enable_hypothesis',
         journal=request.journal,
     )
     if request.POST:
         hypothesis = request.POST.get('hypothesis')
-        setting_handler.save_plugin_setting(plugin, 'enable_hypothesis', hypothesis, request.journal)
+        setting_handler.save_plugin_setting(
+            plugin,
+            'enable_hypothesis',
+            hypothesis,
+            request.journal,
+        )
         return redirect(reverse('annotators_index'))
 
     template = 'annotators/index.html'
