@@ -4,11 +4,11 @@ from utils.install import update_settings
 PLUGIN_NAME = 'Annotators'
 DESCRIPTION = 'This is a plugin to handle consortial billing.'
 AUTHOR = 'Andy Byers'
-VERSION = '1.0'
+VERSION = '1.1'
 SHORT_NAME = 'annotators'
 DISPLAY_NAME = 'Annotators'
 MANAGER_URL = 'annotators_index'
-JANEWAY_VERSION = "1.5.0"
+JANEWAY_VERSION = "1.7.0"
 IS_WORKFLOW_PLUGIN = False
 
 
